@@ -76,14 +76,14 @@ app.get("/dog", (req, res) => {
       b) animal: con la variable que almacena el objeto encontrado. Si no lo encuentra la variable se va vacía
 */ 
 app.get("/api/getAnimal/:animal", (req, res) => {
-	var chosen = req.params.animal;
-	var found = null;
-	for (var i = 0; i < animals.length; i++) {
-		if (chosen === animals[i].animalType) {
-			found = animals[i];
-		}
-	}
-	res.render('pages/any', {title: chosen, animal: found});
+  var chosen = req.params.animal;
+  var found = null;
+  for (var i = 0; i < animals.length; i++) {
+    if (chosen === animals[i].animalType) {
+      found = animals[i];
+    }
+  }
+  res.render('pages/any', {title: chosen, animal: found});
 })
 
 //  Agrega el código necesario para que el servidor escuche en el puerto 5000
